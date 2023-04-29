@@ -18,7 +18,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static org.example.Config.TIMEOUT_FOR_INTERACTING_WITH_ELEMENT_IN_SECONDS;
-import static org.example.utils.IoUtils.increaseVerifiedTimeslotMetric;
 import static org.example.utils.IoUtils.savePage;
 
 public class Section3DateSelectionHandler implements IFormHandler {
@@ -81,7 +80,6 @@ public class Section3DateSelectionHandler implements IFormHandler {
 
         // Verify timeslot options
         if (isTimeslotOptionVerified(webElement)) {
-            increaseVerifiedTimeslotMetric();
             selectTimeslot(webElement);
         } else {
             throw new FormValidationFailed("Validating the time slots has failed");

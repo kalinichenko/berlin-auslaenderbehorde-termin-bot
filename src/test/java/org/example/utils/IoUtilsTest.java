@@ -19,8 +19,6 @@ class IoUtilsTest {
     @BeforeAll
     static void setup() {
         IoUtils.isLocalSaveEnabled = true;
-        IoUtils.isS3Enabled = true;
-        setAWSCredentials();
     }
 
     @Test
@@ -33,16 +31,5 @@ class IoUtilsTest {
 
     }
 
-
-    @Test
-    void asd() throws InterruptedException {
-
-        int sent_metric_count = 20;
-        while (sent_metric_count != 0) {
-            increaseReservationDoneMetric();
-            Thread.sleep(5000);
-            sent_metric_count = sent_metric_count - 1;
-        }
-    }
 
 }
